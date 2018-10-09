@@ -1,0 +1,56 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} */
+
+h1 {
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.contact p {
+  margin-left: 20px; 
+}
+
+button {
+  margin-left: 20px;
+}
+
+.nameCard {
+  background-color: blanchedalmond;
+  margin-top: 300px;
+  padding: 50px;
+  color: navy;
+  border-top: 2px navy solid;
+  border-bottom: 2px navy solid;
+}

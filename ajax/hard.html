@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ISS Pass Over</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <!-- http://api.open-notify.org/iss-pass.json?lat=LAT&lon=LON  -->
+    
+
+    <form id="myForm">
+      <input type="text" name="task" placeholder="Input Latitude" id="inputLat" />
+      <input type="text" name="task" placeholder="Input Longitude" id="inputLong" />
+      <button>Submit</button>
+    </form>
+    <button onclick="getLocation()">Geolocation</button>
+    <div id="spaceStation"></div>
+
+    <script>
+        let output = document.getElementById("spaceStation");
+        let myForm = document.getElementById("myForm");
+
+      myForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        run();
+      });
+
+      function getLocation() {
+           if (navigator.geolocation) {
+               navigator.geolocation.getCurrentPosition(setPosition);
+           } else {
+               output.innerHTML = "Geolocation is not supported by this browser.";
+           }
+       }
+
+       function setPosition(position) {
+           inputLat.value = position.coords.latitude;
+           inputLong.value = position.coords.longitude;
+           run();
+       }
+
+       function run() {
+        let inputLat = document.getElementById("inputLat").value;
+        let inputLong = document.getElementById("inputLong").value;
+
+        fetch(`http://api.open-notify.org/iss-pass.json?lat=${inputLat}&lon=${inputLong}`)
+          .then(response => response.json())
+          .then(data => stationTracker(data))
+
+        function stationTracker(data) {
+          if (data.message !== 'success') {
+            output.innerHTML = 'Enter a correct longitude and latitude por favor';
+          }
+
+          for(var i = 0; i < data.response.length; i++ ){
+            let date = new Date(data.response[i].risetime*1000);
+            output.innerHTML += `The shuttle is going to pass over at ${date}. <br />`;
+          }
+
+          console.log(data) 
+        }
+       }    
+    </script>
+
+
+</body>
+</html>

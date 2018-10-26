@@ -1,0 +1,38 @@
+<!--VERY HARD: Given a comma separated string of full names, use JavaScript to create an alphabetical-by-Last-Name,
+ ordered list and have it display in HTML. Make the last names bold and red using CSS (NOT inline styles). -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+
+        <p>Click the button to sort the array.</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p id="demo"></p>
+
+        <script>
+            function compare(a, b) {
+            var splitA = a.split(" ");
+            var splitB = b.split(" ");
+            var lastA = splitA[splitA.length - 1];
+            var lastB = splitB[splitB.length - 1];
+    
+            if (lastA < lastB) return -1;
+            if (lastA > lastB) return 1;
+            return 0;   
+            }
+    
+            var names = ["Toni Clark", "Caleb Farmer", "Angelo Blandon", "Maria Rockwell"];
+                document.getElementById("demo").innerHTML = names;
+    
+            function myFunction() {
+                var sorted = names.sort(compare);
+                console.log(sorted);
+                document.getElementById("demo").innerHTML = sorted;
+            }
+        </script>
+
+    </body>
+</html>

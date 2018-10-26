@@ -1,0 +1,78 @@
+<!--VERY HARD: Create a horizontal navigation of 5 items, one of the items should have a dropdown menu when you hover over it. -->
+<DOCTYPE html></DOCTYPE>
+<html lang=eng>
+    <head>
+        <meta charset="utf-8">
+            <style>
+
+                ul{
+                    padding: 0;
+                }   
+
+                nav ul li {
+                    background-color: black;
+                    padding: 10px 15px;
+                }
+
+                nav > ul > li {
+                    
+                    float: left;
+                    margin: 1em;
+                    text-align: center;
+                    line-height: 30px;
+                    
+
+                }
+                nav ul li a:hover {
+                    background-color: lightblue;
+                }
+
+                li {
+                    list-style: none;
+
+                }
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+
+                nav ul li a {
+                    display: block;
+                }
+
+
+                .subnav {
+                    display: none;
+                }
+
+                .subnavP:hover ul li {
+                    display: block;
+                    padding: 5px 10px;
+                }
+            </style>
+
+    </head>
+    <body>
+        <nav>
+            <ul class="topul">
+                <li class="topnav"><a href=#>Breakfast</a></li>
+                <li><a href=#>Brunch</a></li>
+                <li><a href=#>Lunch</a></li>
+                <li><a href=#>Dinner</a></li>
+                <li class="subnavP"><a href=#>Supper</a>
+                <ul>
+                        <li class=subnav><a href="#">Cram</a></li>
+                        <li class=subnav><a href="#">Lembas</a></li>
+                        <li class=subnav><a href="#">Honey Cake</a></li>
+                        <li class=subnav><a href="#">Petty Dwarf Roots</a></li>
+
+                    
+                    </ul>
+                </li>
+                <li><a href=#>Elevensies</a></li>
+                    
+            </ul>
+        </nav>
+    </body>
+
+    </html>

@@ -1,0 +1,24 @@
+
+td{
+    background-color: black;
+    color: white;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+}
+
+#red{
+    border-radius:100% 0 0 0 ;
+}
+
+#yellow{
+    border-radius: 0 100% 0 0 ;    
+}
+
+#blue{
+    border-radius: 0 0 0 100%;   
+}
+
+#green{
+    border-radius: 0 0 100% 0 ; 
+}

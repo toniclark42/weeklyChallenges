@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Weather</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <!-- <h1>Your cities weather!</h1> -->
+
+  <!-- http://api.openweathermap.org/data/2.5/weather?q=Charlotte,us&units=imperial&appid=5306bd429f37f59b00f62af068c1422a  -->
+    
+
+    <form id="myForm">
+      <input type="text" name="task" placeholder="Input City" id="input" />
+      <button>Submit</button>
+    </form>
+    <div id="weather"></div>
+    
+    <script>
+
+      let output = document.getElementById("weather");
+      let myForm = document.getElementById("myForm");
+
+      myForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        run();
+      });
+
+      function run() {
+        let input = document.getElementById("input").value;
+
+        //take json data and pass into function so we can use the information from the json in the function
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input},us&units=imperial&appid=5306bd429f37f59b00f62af068c1422a`)
+        .then(response => response.json())
+          .then(data => weatherTracker(data))
+
+        function weatherTracker(data) {
+          console.log(data)
+          if (data.cod !== 200) {
+            output.innerHTML = 'Enter a correct city name por favor';
+          }
+        
+          output.innerHTML=`Current Temperature in ${data.name} is ${data.main.temp} degrees F.
+          Sky condition: ${data.weather[0].main}`;
+        }
+      }     
+    </script>
+</body>
+</html>
+
+

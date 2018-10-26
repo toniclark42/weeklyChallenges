@@ -1,0 +1,62 @@
+<!--HARD: Create an HTML form with a GET method that will collect the following: First Name, Last Name, 
+Gender (have them pick), Favorite sport (from a dropdown list of at least 5),
+Checkboxes for what you like on your pizza (from a list of at least 5) and
+the submit button should read, "Save". -->
+
+<!DOCTYPE html>
+        <html lang=eng>
+            <head>
+                <meta charset="utf-8">
+                <title>Ice Breaker</title>
+            </head>
+        
+            <body>
+                <header>
+                    <h1>Ice Breaker</h1>
+                </header>
+                <form method="get">
+                    <div>
+                        <label for="firstname">First Name:</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="First Name">
+                    </div>
+                    <div>
+                        <label for="lastname">First Name:</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Last Name">
+                    </div>
+                    <div>
+                        <label for="male">Male:</label>
+                        <input type=radio id="male" name="gener" value="m">
+                        <label for="female">Female:</label>
+                        <input type=radio id="female" name="gener" value="f">
+                    </div>
+                    <div>
+                        <label for="favSport"> What is your favorite sport?</label>
+                        <select id="favSport" name=favSport>
+                            <option value="horseshoes">Horse Shoes</option>
+                            <option value="archery">Archery</option>
+                            <option value="kickball">Kickball</option>
+                            <option value="cornhole">Corn Hole</option>
+                            <option value="ultimatefrisbee">Ultimate Frisbee</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="hawaiianPizza">Hawaiian Pizza</label>
+                        <input type="checkbox" name="favoritePizza" value="Hawaiian Pizza">
+                        <label for="bbqChickenPizza">BBQ Chicken Pizza</label>
+                        <input type="checkbox" name="favoritePizza" value="BBQ Chicken Pizza">
+                        <label for="pepperoniPizza">Pepperoni Pizza</label>
+                        <input type="checkbox" name="favoritePizza" value="Pepperoni Pizza">
+                        <label for="cheesePizza">Cheese Pizza</label>
+                        <input type="checkbox" name="favoritePizza" value="Cheese Pizza">
+                        <label for="veggiePizza">Veggie Pizza</label>
+                        <input type="checkbox" name="favoritePizza" value="Veggie Pizza">
+                    </div>
+                    <div>
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </body>
+        </html>
+
+
+        

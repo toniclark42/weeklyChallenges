@@ -1,0 +1,17 @@
+.flexContainer{
+    display: flex;
+}
+
+.flexContainer{
+    width: 400px;
+    height: 500px;
+}
+
+figure > img{
+    width: 400px;
+    align-items: center;
+}    
+
+figcaption{
+    text-align: center;
+}

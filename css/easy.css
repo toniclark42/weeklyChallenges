@@ -1,0 +1,24 @@
+img {
+    position: absolute;
+    height: 126px;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+td{
+    width: 400px;
+    padding: 0;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+    color: white;
+}
+tr:nth-child(odd) {
+    background-color: red;
+    color: red;
+}
+
+

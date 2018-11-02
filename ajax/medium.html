@@ -5,12 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Weather</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
 </head>
 <body>
   <!-- <h1>Your cities weather!</h1> -->
 
   <!-- http://api.openweathermap.org/data/2.5/weather?q=Charlotte,us&units=imperial&appid=5306bd429f37f59b00f62af068c1422a  -->
-    
+    <h1>What's Your Weather?</h1>
 
     <form id="myForm">
       <input type="text" name="task" placeholder="Input City" id="input" />
@@ -34,7 +36,7 @@
         //take json data and pass into function so we can use the information from the json in the function
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${input},us&units=imperial&appid=5306bd429f37f59b00f62af068c1422a`)
         .then(response => response.json())
-          .then(data => weatherTracker(data))
+        .then(data => weatherTracker(data))
 
         function weatherTracker(data) {
           console.log(data)
